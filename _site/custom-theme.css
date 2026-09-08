@@ -1,0 +1,15 @@
+@import url('https://googleapis.com');
+
+html {
+  --body-font: 'Lora', serif;
+  --heading-font: 'Lora', serif;
+}
+
+body {
+  font-family: var(--body-font);
+}
+
+.button-container button {
+  display: inline-block;
+  margin-right: 50px; /* Adds space to the right of each button */
+}
