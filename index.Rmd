@@ -1,0 +1,40 @@
+---
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css}
+d-title {
+    display: none;
+  }
+```
+
+<br>
+<br>
+I am a Researcher with nine years of experience in observational oceanography, possessing strong computational, experimental, and remote sensing skills, and specializing in phytoplankton biophysical interactions using in situ and satellite observations. Seeking marine scientist or environmental management roles in transdisciplinary research related to climate change and marine ecology.
+
+<div class="button-container">
+  <a href="https://example1.com"><button>Click Me</button></a>
+  <a href="https://example2.com"><button>Click Me</button></a>
+  <a href="https://example3.com"><button>Click Me</button></a>
+</div>
+
+<style>
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-container a,
+  .button-container a:hover,
+  .button-container a:focus {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
+</style>
+
