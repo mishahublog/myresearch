@@ -1,0 +1,127 @@
+---
+title: "Experience"
+description: |
+  A new article created using the Distill format.
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r fig.height=8}
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(stringr)
+library(ggrepel) # <-- Required for anti-overlapping
+
+# 1. Dataset setup
+timeline_data <- tibble::tribble(
+  ~role, ~organization, ~start_str, ~end_str, ~details,
+  "Project Assistant-II (PA-II)", 
+  "National Institute of Oceanography (NIO), Kochi", 
+  "2011-02-01", "2012-02-28", 
+  "Phytoplankton ecophysiology, culturing and experimenting with PI curves",
+  
+  "Junior Research Fellow (JRF)", 
+  "Centre for Marine Living Resource and Ecology (CMLRE), Kochi", 
+  "2013-02-01", "2017-12-31", 
+  "Observational oceanography for bio-regionalization of phytoplankton groups and dynamics of biogeochemistry",
+  
+  "Senior Research Fellow (SRF)", 
+  "Cochin University of Science & Technology (CUSAT), Kochi", 
+  "2018-01-01", "2023-01-31", 
+  "Quantitative marine ecology using cruise data, Bio-Argo and remote sensing",
+  
+  "Research Associate (RA)", 
+  "Nansen Environmental Research Centre (NERC), Kochi", 
+  "2023-03-01", "2024-01-31", 
+  "IPCC datasets and CMIP6 models on chlorophyll-a dynamics on MoEs funded EU HORIZON 2020 'COMFORT' Project",
+  
+  "Research Associate Consultant (RAC)", 
+  "Rangson Aerospace Private Ltd", 
+  "2024-03-01", "2025-06-30", 
+  "Synthetic Aperture RADAR (SAR) on dual pol/quad pol datasets on various applications in surveillance systems"
+) %>%
+  mutate(
+    start_date = as.Date(start_str),
+    end_date = as.Date(end_str),
+    mid_date = start_date + (end_date - start_date) / 2,
+    period = paste0(format(start_date, "%b %Y"), " - ", format(end_date, "%b %Y")),
+    wrapped_details = str_wrap(details, width = 45),
+    label_text = paste0(role, "\n", organization, "\n(", period, ")\n", wrapped_details)
+  )
+
+# 2. Build non-overlapping timeline plot
+ggplot(timeline_data) +
+  # Main central vertical axis line
+  geom_segment(
+    aes(x = 0, xend = 0, y = as.Date("2010-06-01"), yend = as.Date("2026-06-01")),
+    color = "#cccccc", linewidth = 1.2
+  ) +
+  # Duration segments for each position
+  geom_segment(
+    aes(x = 0, xend = 0, y = start_date, yend = end_date, color = role),
+    linewidth = 3.5, lineend = "round"
+  ) +
+  # Node points for start and end dates
+  geom_point(aes(x = 0, y = start_date, color = role), size = 3) +
+  geom_point(aes(x = 0, y = end_date, color = role), size = 3) +
+  # Center point where label segment connects
+  geom_point(aes(x = 0, y = mid_date, color = role), size = 1.5) +
+  # Repelled labels with built-in connector lines
+  geom_label_repel(
+    aes(x = 0, y = mid_date, label = label_text, color = role),
+    direction = "y",              # Move labels along y-axis to prevent overlap
+    nudge_x = 0.35,               # Shift all labels cleanly to the right
+    hjust = 0, 
+    vjust = 0.5, 
+    size = 3.2, 
+    fill = "#fcfcfc",
+    label.padding = unit(0.4, "lines"),
+    lineheight = 1.1,
+    box.padding = unit(0.5, "lines"),
+    point.padding = unit(0.3, "lines"),
+    min.segment.length = 0,       # Always draw connecting line
+    segment.color = "#888888",
+    segment.linetype = "dashed",
+    segment.size = 0.5
+  ) +
+  scale_y_date(
+    date_breaks = "2 years",
+    date_labels = "%Y",
+    limits = c(as.Date("2010-06-01"), as.Date("2026-06-01"))
+  ) +
+  scale_x_continuous(limits = c(-0.2, 1.8)) +
+  scale_color_brewer(palette = "Set1") +
+  labs(
+    title = "Career Timeline",
+    subtitle = "Research & Professional Experience (2011 – 2025)",
+    y = "Year",
+    x = NULL
+  ) +
+  theme_minimal(base_family = "sans") +
+  theme(
+    plot.title = element_text(face = "bold", size = 16, hjust = 0),
+    plot.subtitle = element_text(color = "gray30", size = 11, margin = margin(b = 15)),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.title.x = element_blank(),
+    axis.text.y = element_text(size = 10, face = "bold", color = "gray20"),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.position = "none",
+    plot.margin = margin(20, 20, 20, 20)
+  )
+```
+
+<aside>
+```{r}
+ggplot(mtcars, aes(hp, mpg)) + geom_point() + geom_smooth()
+```
+</aside>
+
+
+

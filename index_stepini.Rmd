@@ -1,0 +1,70 @@
+---
+output: distill::distill_article
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{css}
+d-title {
+    display: none;
+  }
+```
+
+
+<br> 
+<br>
+<br>
+
+<br> <br> I am a Researcher with nine years of experience in
+observational oceanography, possessing strong computational,
+experimental, and remote sensing skills, and specializing in
+phytoplankton biophysical interactions using in situ and satellite
+observations. Seeking marine scientist or environmental management roles
+in transdisciplinary research related to climate change and marine
+ecology.
+
+::: button-container
+<a href="https://linkedin.com"><button>Linkedin</button></a>
+<a href="https://example2.com"><button>Click Me</button></a>
+<a href="https://example3.com"><button>Click Me</button></a>
+<a href="https://example3.com"><button>Click Me</button></a>
+<a href="https://example3.com"><button>Click Me</button></a>
+<a href="https://example3.com"><button>Click Me</button></a>
+:::
+
+```{=html}
+<style>
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-container a,
+  .button-container a:hover,
+  .button-container a:focus {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
+</style>
+```
+
+
+For more updates, check out our [GitHub page](https://github.com) <i class="fab fa-github" style="color: #24292e;"></i>.
+
+
+#### CURRENT STATUS
+
+#### Institute of Oceanology of the Polish Academy of Sciences–Post Doctoral Research Fellow
+
+June 2025 - present
+
+Optical proxies of essential biogeochemical variables and their
+application in the accuracy assessment of satellite ocean color remote
+sensing in the North-eastern Greenland shelf.

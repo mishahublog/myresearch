@@ -11,14 +11,12 @@ body {
 
 .button-container button {
   display: inline-block;
-  margin-right: 50px; /* Adds space to the right of each button */
+  margin-right: 30px; /* Adds space to the right of each button */
 }
 
-
-.distill-site-nav {
-  background-color: #222629; /* Change to your preferred hex color */
-  color: rgba(255, 255, 255, 0.8);
-}
-.distill-site-nav a:hover {
-  color: #ff6b6b; /* Change hover color if needed */
+/* Forces the target nav element container to change color */
+nav.distill-site-nav, 
+.distill-site-nav, 
+body .distill-site-nav {
+  background-color: #4A5568 !important;
 }
