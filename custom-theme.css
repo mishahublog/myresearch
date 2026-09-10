@@ -24,3 +24,13 @@ body .distill-site-nav {
 d-article aside {
   width: 300%;
 }
+
+
+.mobile-table-container {
+  overflow-x: auto;
+  display: block;
+  width: 100%;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+
