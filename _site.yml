@@ -4,7 +4,7 @@ description: |
   My Website
 output_dir: "docs"
 navbar:
-  right:
+ right:
     - text: "Home"
       href: index.html
     - text: "Experience"
@@ -12,4 +12,4 @@ navbar:
     - text: "About"
       href: about.html
 output: distill::distill_article
-theme: custom-theme.css 
+theme: custom-theme.css

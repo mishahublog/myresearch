@@ -42,3 +42,14 @@ d-article aside {
 }
 
 
+/* Move the site title to the right */
+d-site-header .site-title {
+  float: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Ensure the navigation container stays on the left */
+d-site-header nav {
+  float: left;
+}
