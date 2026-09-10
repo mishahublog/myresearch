@@ -1,11 +1,11 @@
 ---
 title: "Dr Midhun Shah Hussain"
-image: "Q:/myresearch/images/my_foto.jpeg"
+image: "images/my_foto.jpeg"
 links:
   - label: '`r fontawesome::fa("linkedin", height = "25px")`'
     url: "https://www.linkedin.com/in/midhunshah/"
   - label: '`r fontawesome::fa("researchgate", height = "25px")`'
-    url: "https://github.com/mishahublog"
+    url: "https://www.researchgate.net/profile/Midhun-Hussain"
   - label: '`r fontawesome::fa("github", height = "25px")`'
     url: "https://github.com/mishahublog"
   - label: '`r fontawesome::fa("envelope", height = "25px")`'
