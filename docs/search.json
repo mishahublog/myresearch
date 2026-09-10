@@ -1,11 +1,19 @@
 {
   "articles": [
     {
+      "path": "Experience.html",
+      "title": "Experience",
+      "description": "A new article created using the Distill format.\n",
+      "author": [],
+      "contents": "\n\n\n\nResearch Vessels\nFORV Sagarsampada\n\ns/y OCEANIA \n\n\n\nINSTRUMENTATION\nCTD # Autoanalyzer # HPLC # Fluorometry # C-14 Scintillation # Counter # Autosal # ADCP # Radiometry # Echosounder #Settling Chamber #Epifluorescence Microscopy\n\n\n\n",
+      "last_modified": "2026-09-10T23:25:24+02:00"
+    },
+    {
       "path": "index.html",
       "title": "Dr Midhun Shah Hussain",
       "author": [],
       "contents": "\n\n          \n          \n          Dr Midhun Shah Hussain\n          \n          \n          Home\n          Experience\n          About\n          ☰\n          \n          \n      \n        \n          \n            Dr Midhun Shah Hussain\n          \n          \n            \n              \n              A Researcher with twelve years of experience in\n              observational oceanography, possessing strong\n              computational, experimental, and remote sensing skills,\n              and specializing in phytoplankton biophysical interactions\n              using in situ and satellite observations. Seeking marine\n              scientist or environmental management roles in\n              transdisciplinary research related to climate change and\n              marine ecology\n            \n            \n              \n              A Researcher with twelve years of experience in\n              observational oceanography, possessing strong\n              computational, experimental, and remote sensing skills,\n              and specializing in phytoplankton biophysical interactions\n              using in situ and satellite observations. Seeking marine\n              scientist or environmental management roles in\n              transdisciplinary research related to climate change and\n              marine ecology\n            \n          \n\n          \n            \n              \n                  \n                    \n                      \n                  \n                \n                                \n                  \n                    \n                      \n                  \n                \n                                \n                  \n                    \n                      \n                  \n                \n                                \n                  \n                    \n                      \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    \n                \n                                \n                  \n                    \n                \n                                \n                  \n                    \n                \n                                \n                  \n                    \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    \n          © Copyright 2018-2023 [The Distill Template Authors]\n          (https://github.com/distillpub/template/blob/master/AUTHORS) and Posit Software, PBC.\n          Software licensed under the [Apache License, v2.0]\n          (https://www.apache.org/licenses/LICENSE-2.0).\n          \n          \n\n    \n  ",
-      "last_modified": "2026-09-10T23:10:31+02:00"
+      "last_modified": "2026-09-10T23:31:20+02:00"
     }
   ],
   "collections": []

@@ -24,3 +24,21 @@ body .distill-site-nav {
 d-article aside {
   width: 300%;
 }
+
+
+.mobile-table-container {
+  overflow-x: auto;
+  display: block;
+  width: 100%;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Add this to your theme.css file */
+.d-article table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
