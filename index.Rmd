@@ -14,5 +14,12 @@ output:
   postcards::jolla
 site: distill::distill_website
 ---
+
+```{r echo=FALSE, fig.height=2, fig.width=6, message=FALSE, warning=FALSE}
+library(r2d3)
+r2d3(d3_version = 4, script = "voronoi.js")
+```
  
 A Researcher with twelve years of experience in observational oceanography, possessing strong computational, experimental, and remote sensing skills, and specializing in phytoplankton biophysical interactions using in situ and satellite observations. Seeking marine scientist or environmental management roles in transdisciplinary research related to climate change and marine ecology
+
+
