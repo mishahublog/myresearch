@@ -1,14 +1,5 @@
 @import url('https://googleapis.com');
 
-html {
-  --body-font: 'Lora', serif;
-  --heading-font: 'Lora', serif;
-}
-
-body {
-  font-family: var(--body-font);
-}
-
 .button-container button {
   display: inline-block;
   margin-right: 30px; /* Adds space to the right of each button */
@@ -19,4 +10,17 @@ nav.distill-site-nav,
 .distill-site-nav, 
 body .distill-site-nav {
   background-color: #4A5568 !important;
+}
+
+/* For desktop layouts where the aside column is visible */
+@media (min-width: 1024px) {
+  d-article {
+    /* Adjust the last value (e.g., change 300px to your desired aside width) */
+    grid-template-columns: [screen-start] 1fr [text-start kicker-end] minmax(500px, 1fr) [text-end gutter-start] 60px [gutter-end aside-start] 350px [aside-end screen-end];
+  }
+}
+
+/* For mobile/tablet viewports where asides stack or display differently */
+d-article aside {
+  width: 300%;
 }

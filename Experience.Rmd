@@ -118,10 +118,100 @@ ggplot(timeline_data) +
 ```
 
 <aside>
-```{r}
-ggplot(mtcars, aes(hp, mpg)) + geom_point() + geom_smooth()
-```
+
+### Research Vessels
+
+#### FORV Sagarsampada
+
+#### ![](images/sagarsampada.jpeg){width="400px"}
+
+#### s/y OCEANIA ![](images/oceania.jpg){width="400px"}
+
 </aside>
 
+```{r fig.width=8}
+library(ggplot2)
+library(dplyr)
+library(ggrepel)
 
+# 1. Create the dataset
+cruise_data <- data.frame(
+  Year = c(2013, 2013, 2014, 2015, 2015, 2016, 2016, 2017, 2025, 2025, 2025),
+  Cruise = c("Cruise 313", "Cruise 314", "Cruise 329", "Cruise 335", 
+             "Cruise 339", "Cruise 341 (Leg 1)", "Cruise 341 (Leg 2)", 
+             "Cruise 360", "Baltic Cruise 1", "Baltic Cruise 2", "Baltic Cruise 3"),
+  Region = c(rep("Northern Arabian Sea", 8), rep("Southern Baltic Sea", 3))
+)
 
+# 2. Assign vertical position and proper horizontal offsets
+cruise_data <- cruise_data %>%
+  mutate(
+    Y_Pos = if_else(Region == "Northern Arabian Sea", 1, 2),
+    Year_Offset = case_when(
+      Cruise == "Cruise 313" ~ 2012.85,
+      Cruise == "Cruise 314" ~ 2013.15,
+      Cruise == "Cruise 335" ~ 2014.85,
+      Cruise == "Cruise 339" ~ 2015.15,
+      Cruise == "Cruise 341 (Leg 1)" ~ 2015.85,
+      Cruise == "Cruise 341 (Leg 2)" ~ 2016.15,
+      Cruise == "Baltic Cruise 1" ~ 2024.7, 
+      Cruise == "Baltic Cruise 2" ~ 2025.0,
+      Cruise == "Baltic Cruise 3" ~ 2025.3,
+      TRUE ~ as.numeric(Year)
+    )
+  )
+
+# 3. Generate the ggplot2 visualization
+ggplot(cruise_data, aes(x = Year_Offset, y = Y_Pos, color = Region)) +
+  # Baseline tracks for each region
+  geom_segment(data = data.frame(Y = c(1, 2), Xmin = c(2012.5, 2024.3), Xmax = c(2017.5, 25.7)),
+               aes(x = Xmin, xend = Xmax, y = Y, yend = Y), 
+               inherit.aes = FALSE, color = "grey70", linewidth = 1) +
+  # Points for cruises
+  geom_point(size = 4, alpha = 0.9) +
+  # Non-overlapping labels
+  geom_text_repel(aes(label = Cruise), 
+                  size = 3.5, 
+                  fontface = "bold",
+                  box.padding = 0.5,
+                  point.padding = 0.5,
+                  force = 2,
+                  max.overlaps = Inf,
+                  show.legend = FALSE) +
+  # Custom scales and theme
+  scale_y_continuous(
+    breaks = c(1, 2),
+    labels = c("Northern Arabian Sea\n(2013–2017)", "Southern Baltic Sea\n(2025)"),
+    limits = c(0.5, 2.5)
+  ) +
+  scale_x_continuous(
+    breaks = c(2013, 2014, 2015, 2016, 2017, 2025),
+    limits = c(2012, 2026.5)
+  ) +
+  scale_color_manual(values = c("Northern Arabian Sea" = "#1f77b4", "Southern Baltic Sea" = "#2ca02c")) +
+  labs(
+    title = "Research Expedition Timeline",
+    subtitle = "156 Total Sea Days across Northern Arabian Sea and Southern Baltic Sea",
+    x = "Year",
+    y = NULL,
+    color = "Region"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_line(linetype = "dashed", color = "grey80"),
+    axis.text.y = element_text(face = "bold", size = 11),
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(color = "grey30", size = 10),
+    legend.position = "bottom"
+  )
+```
+
+<aside>
+
+#### INSTRUMENTATION
+
+#### CTD \# Autoanalyzer \# HPLC \# Fluorometry \# C-14 Scintillation \# Counter \# Autosal \# ADCP \# Radiometry \# Echosounder #Settling Chamber #Epifluorescence Microscopy
+
+</aside>

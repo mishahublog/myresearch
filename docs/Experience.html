@@ -2179,15 +2179,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <style type="text/css">@import url('https://googleapis.com');
 
-  html {
-    --body-font: 'Lora', serif;
-    --heading-font: 'Lora', serif;
-  }
-
-  body {
-    font-family: var(--body-font);
-  }
-
   .button-container button {
     display: inline-block;
     margin-right: 30px; /* Adds space to the right of each button */
@@ -2198,6 +2189,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   .distill-site-nav, 
   body .distill-site-nav {
     background-color: #4A5568 !important;
+  }
+
+  /* For desktop layouts where the aside column is visible */
+  @media (min-width: 1024px) {
+    d-article {
+      /* Adjust the last value (e.g., change 300px to your desired aside width) */
+      grid-template-columns: [screen-start] 1fr [text-start kicker-end] minmax(500px, 1fr) [text-end gutter-start] 60px [gutter-end aside-start] 350px [aside-end screen-end];
+    }
+  }
+
+  /* For mobile/tablet viewports where asides stack or display differently */
+  d-article aside {
+    width: 300%;
   }</style>
   <style type="text/css">
   /* base style */
@@ -2354,7 +2358,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.32/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2407,12 +2411,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="Experience_files/figure-html5/unnamed-chunk-1-1.png" alt="" width="624" /></p>
+<p><img src="Experience_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
 </div>
 <aside>
+<h3 id="research-vessels">Research Vessels</h3>
+<h4 id="forv-sagarsampada">FORV Sagarsampada</h4>
+<h4 id="section"><img src="images/sagarsampada.jpeg" width="400" /></h4>
+<h4 id="sy-oceania">s/y OCEANIA <img src="images/oceania.jpg" width="400" /></h4>
+</aside>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="Experience_files/figure-html5/unnamed-chunk-2-1.png" alt="" width="624" /></p>
+<p><img src="Experience_files/figure-html5/unnamed-chunk-2-1.png" width="768" /></p>
 </div>
+<aside>
+<h4 id="instrumentation">INSTRUMENTATION</h4>
+<h4 id="ctd-autoanalyzer-hplc-fluorometry-c-14-scintillation-counter-autosal-adcp-radiometry-echosounder-settling-chamber-epifluorescence-microscopy">CTD # Autoanalyzer # HPLC # Fluorometry # C-14 Scintillation # Counter # Autosal # ADCP # Radiometry # Echosounder #Settling Chamber #Epifluorescence Microscopy</h4>
 </aside>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
