@@ -1,34 +1,20 @@
 ---
-title: "none"
-output: distill::distill_website
+title: "Tobi Burns"
+image: "tobi.jpg"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/"
+  - label: Email
+    url: "mailto:email@email.com"
+output:
+  postcards::jolla
+site: distill::distill_website
 ---
-
-```{css, echo=FALSE}
-d-title {
-  display: none;
-}
-```
-<Br>
-<Br>
-
-### Dr Midhun Shah Hussain
-
-```{r echo=FALSE, fig.height=2, fig.width=6, message=FALSE, warning=FALSE}
-library(r2d3)
-r2d3(d3_version = 4, script = "voronoi.js")
-```
  
-A Researcher with twelve years of experience in observational oceanography, possessing strong computational, experimental, and remote sensing skills, and specializing in phytoplankton biophysical interactions using in situ and satellite observations. Seeking marine scientist or environmental management roles in transdisciplinary research related to climate change and marine ecology
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(htmltools)
-library(fontawesome)
-
-tags$div(
-  style = "display: flex; gap: 15px; font-size: 24px;",
-  a(href = "https://github.com/your-username", target = "_blank", fa("github", fill = "currentColor")),
-  a(href = "https://twitter.com/your-username", target = "_blank", fa("twitter", fill = "currentColor")),
-  a(href = "mailto:your-email@example.com", fa("envelope", fill = "currentColor"))
-)
-```
-
+I am a classically trained data scientist living in the San Francisco Bay Area. 
+Currently I work on the Oculus team at Facebook. I love talking about baseball, 
+true crime podcasts, and causal inference.
