@@ -1,20 +1,23 @@
 ---
-title: "Tobi Burns"
-image: "tobi.jpg"
+title: "Dr Midun Shah Hussain"
+image: "images/my_foto_2.jpeg"
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://www.linkedin.com/in/midhunshah/"
+  - label: ResearchGate
+    url: "https://www.researchgate.net/profile/Midhun_Hussain   "
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/mishahublog"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:mshussain@iopan.pl"
 output:
   postcards::jolla
 site: distill::distill_website
 ---
  
-I am a classically trained data scientist living in the San Francisco Bay Area. 
-Currently I work on the Oculus team at Facebook. I love talking about baseball, 
-true crime podcasts, and causal inference.
+```{r echo=FALSE, fig.height=2, fig.width=4.8, message=FALSE, warning=FALSE}
+library(r2d3)
+r2d3(d3_version = 4, script = "voronoi.js")
+```
+
+A Researcher with twelve years of experience in observational oceanography, possessing strong computational, experimental, and remote sensing skills, and specializing in phytoplankton biophysical interactions using in-situ and satellite observations. Seeking marine scientist or environmental management roles in transdisciplinary research related to climate change and marine ecology
