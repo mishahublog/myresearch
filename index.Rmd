@@ -15,7 +15,7 @@ output:
 site: distill::distill_website
 ---
  
-```{r echo=FALSE, fig.height=2, fig.width=4, message=FALSE, warning=FALSE}
+```{r echo=FALSE, fig.height=1, fig.width=4.8, message=FALSE, warning=FALSE,fig.align = 'center'}
 library(r2d3)
 r2d3(d3_version = 4, script = "voronoi.js")
 ```
