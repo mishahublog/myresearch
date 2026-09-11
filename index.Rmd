@@ -16,8 +16,17 @@ site: distill::distill_website
 ---
  
 ```{r echo=FALSE, fig.height=1, fig.width=4.8, message=FALSE, warning=FALSE,fig.align = 'center'}
+
 library(r2d3)
-r2d3(d3_version = 4, script = "voronoi.js")
+
+r2d3(
+  script = "voronoi.js",
+  d3_version = 4,
+  width = "100%",    # Fill the parent container width on mobile
+  height = "300px"   # Provide a solid touch-friendly height for mobile screens
+)
+
+
 ```
 
 A Researcher with twelve years of experience in observational oceanography, possessing strong computational, experimental, and remote sensing skills, and specializing in phytoplankton biophysical interactions using in-situ and satellite observations. Seeking marine scientist or environmental management roles in transdisciplinary research related to climate change and marine ecology
