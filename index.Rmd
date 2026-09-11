@@ -23,7 +23,7 @@ r2d3(
   script = "voronoi.js",
   d3_version = 4,
   width = "100%",    # Fill the parent container width on mobile
-  height = "300px"   # Provide a solid touch-friendly height for mobile screens
+  height = "150px"   # Provide a solid touch-friendly height for mobile screens
 )
 
 
